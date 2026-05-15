@@ -7,7 +7,7 @@ from issues.serializers.issue_serializer import IssueSerializer
 
 class IssueViewSet(ModelViewSet):
 
-    queryset = Issue.objects.all()
+    queryset = Issue.objects.select_related('project','created_by','assigned_to').all()
     serializer_class = IssueSerializer
     permission_classes = [IsAuthenticated]
 

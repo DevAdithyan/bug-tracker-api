@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'projects',
     'issues',
     'comments',
-    'common'
+    'common',
+    'notifications',
 ]
 
 AUTH_USER_MODEL = 'users.User'

@@ -5,10 +5,15 @@ from issues.models import Issue
 
 class IssueSerializer(serializers.ModelSerializer):
 
+    assigned_to_username = serializers.CharField(
+        source='assigned_to.username',
+        read_only=True
+    )
+
     class Meta:
         model = Issue
+
         fields = '__all__'
-        read_only_fields = ['created_by']
 
     def validate(self, attrs):
 

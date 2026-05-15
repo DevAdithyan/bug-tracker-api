@@ -7,4 +7,5 @@ urlpatterns = [
     path('api/projects/',include('projects.urls')),
     path('api/issues/',include('issues.urls')),
     path('api/comments/',include('comments.urls')),
+    path('api/notifications/', include('notifications.urls')),
 ]

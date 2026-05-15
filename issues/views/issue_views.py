@@ -11,6 +11,10 @@ class IssueViewSet(ModelViewSet):
     serializer_class = IssueSerializer
     permission_classes = [IsAuthenticated]
 
+    filterset_fields = ['status', 'priority', 'project']
+    search_fields = ['title', 'description']
+    ordering_fields = ['created_at', 'priority']
+
     def perform_create(self, serializer):
 
         serializer.save(created_by=self.request.user)
